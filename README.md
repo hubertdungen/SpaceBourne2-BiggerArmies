@@ -7,7 +7,7 @@ faction gets 10 general slots, 5 for Ground Forces and 5 for Space Forces: 10 sq
 "Fifty men isn't exactly an army to conquer the galaxy." Bigger Armies gives your faction more
 general slots, so you can field twice as many men.
 
-Version 0.1.0 · UE4SS Lua mod · works alone or with the rest of the
+Version 0.1.0 · [Nexus Mods page](https://www.nexusmods.com/spacebourne2/mods/17) · UE4SS Lua mod · works alone or with the rest of the
 [realism set](#part-of-the-spacebourne-2-realism-set).
 
 ## What it does
@@ -101,7 +101,7 @@ To install them all at once, use the installer:
 | **Ground Waypoints** — planet markers on foot and on the hoverbike | released: [GitHub](https://github.com/hubertdungen/SpaceBourne2-GroundWaypoints) · [Nexus Mods](https://www.nexusmods.com/spacebourne2/mods/13) |
 | **Get Out of the Way** — NPCs step aside naturally | released: [GitHub](https://github.com/hubertdungen/SpaceBourne2-GetOutOfTheWay) · [Nexus Mods](https://www.nexusmods.com/spacebourne2/mods/14) |
 | **Tactical First Person** — first-person on foot | released: [GitHub](https://github.com/hubertdungen/SpaceBourne2-TacticalFirstPerson) · [Nexus Mods](https://www.nexusmods.com/spacebourne2/mods/15) |
-| **Bigger Armies** — more ground forces for your faction (this mod) | coming |
+| **Bigger Armies** — more ground forces for your faction (this mod) | released: [GitHub](https://github.com/hubertdungen/SpaceBourne2-BiggerArmies) · [Nexus Mods](https://www.nexusmods.com/spacebourne2/mods/17) |
 
 ## License
 
