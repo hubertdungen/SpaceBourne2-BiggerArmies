@@ -142,14 +142,14 @@ local okH, errH = pcall(RegisterHook, "/Script/Engine.PlayerController:ClientRes
 end)
 if not okH then warn("could not watch the player controller: " .. tostring(errH)) end
 
--- Every 2 s on the game thread: pumped by the ALS character tick on foot and the ship tick in a
--- ship (gametick.lua, 0.1.2). Until 0.1.1 this was LoopAsync + ExecuteInGameThread: called from
+-- Every 2 s on the game thread: pumped by the HUD draw (on foot and in a ship), with the ALS
+-- character tick as a fallback (gametick.lua, 0.1.2). Until 0.1.1 this was LoopAsync + ExecuteInGameThread: called from
 -- UE4SS's async thread, ExecuteInGameThread writes a map all mods share without a lock, and two
 -- mods doing it at once crashed the game (UE4SS.dll+0x87c104).
 local GT = require("gametick")
 GT.log = function(msg) warn(msg) end
+GT.drive(GT.HUD_TICK, "hud")
 GT.drive(GT.FOOT_TICK, "foot")
-GT.drive(GT.SHIP_TICK, "ship")
 GT.boot()
 GT.every(2.0, function(now)
     if now < nextCheck then return end
