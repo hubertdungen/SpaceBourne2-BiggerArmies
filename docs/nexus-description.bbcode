@@ -2,18 +2,31 @@
 
 In SpaceBourne 2 your faction's forces are its generals, and each general leads 4 soldiers. A new faction gets 10 general slots, 5 for Ground Forces and 5 for Space Forces: 10 squads, 50 men. "Fifty men isn't exactly an army to conquer the galaxy." Bigger Armies gives your faction more general slots, so you can field twice as many men.
 
-Version 0.1.1 · [url=https://www.nexusmods.com/spacebourne2/mods/17]Nexus Mods page[/url] · UE4SS Lua mod · works alone or with the rest of the [url=#part-of-the-spacebourne-2-realism-set]realism set[/url].
+[b]Links:[/b] [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies]GitHub[/url] · [url=https://www.nexusmods.com/spacebourne2/mods/17]Nexus Mods[/url] · UE4SS Lua mod · works alone or with the rest of the realism set.
+[b]Install the whole realism set in one go:[/b] the [url=https://github.com/hubertdungen/SpaceBourne2-Realism]SpaceBourne 2 Realism installer[/url] ([url=https://www.nexusmods.com/spacebourne2/mods/11]Nexus[/url]).
 
 [line]
-[size=5][b]What it does[/b][/size]
+[size=5][b]Features[/b][/size]
+
+[size=4][b]A bigger army[/b][/size]
 
 [list]
 [*][b]10 more general slots[/b] by default (5 Ground Forces, 5 Space Forces), on top of the game's own. Each slot is room for a general and 4 soldiers: 50 more men, 100 in all.
-[*][b]The game's own way:[/b] the slots are added with the same function the station upgrade uses, so they look and work like the game's slots. Fill them as usual: recruit, promote a soldier to general, give them soldiers.
-[*][b]Still costs you:[/b] every recruit costs 200 Faction Power and a daily fee, as in the game.
-[*][b]Up to 110 men:[/b] the game stops recruiting at 110 people in total, so the mod never goes above 22 slots (22 squads of 5).
-[*][b]Your faction first:[/b] nothing happens until you have founded your faction; the slots appear a few seconds after that, or after loading a save.
-[*][b]On by default.[/b] No key needed.
+[*][b]Up to 110 men.[/b] The game stops recruiting at 110 people in total, so the mod never goes above 22 slots (22 squads of 5).
+[/list]
+
+[size=4][b]The game's own way[/b][/size]
+
+[list]
+[*][b]Real slots.[/b] The slots are added with the same function the station upgrade uses, so they look and work like the game's slots. Fill them as usual: recruit, promote a soldier to general, give them soldiers.
+[*][b]Still costs you.[/b] Every recruit costs 200 Faction Power and a daily fee, as in the game.
+[*][b]Your faction first.[/b] Nothing happens until you have founded your faction; the slots appear a few seconds after that, or after loading a save.
+[/list]
+
+[size=4][b]On by default[/b][/size]
+
+[list]
+[*]No key needed: it works as soon as it is installed.
 [/list]
 
 [line]
@@ -21,22 +34,21 @@ Version 0.1.1 · [url=https://www.nexusmods.com/spacebourne2/mods/17]Nexus Mods 
 
 [list]
 [*]SpaceBourne 2 (Steam).
-[*][url=https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/v3.0.1]UE4SS 3.0.1[/url], a free script loader for Unreal Engine games.
+[*][url=https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/v3.0.1]UE4SS 3.0.1[/url], a free script loader for Unreal Engine games (the realism installer installs it for you).
 [/list]
 
 [line]
 [size=5][b]Install[/b][/size]
 
-[b]Option A (recommended):[/b] the [url=https://www.nexusmods.com/spacebourne2/mods/11]SpaceBourne 2 Realism[/url] installer installs UE4SS and any mods of the set you pick.
+[b]A. SpaceBourne 2 Realism installer (recommended)[/b] Get it on [url=https://www.nexusmods.com/spacebourne2/mods/11]Nexus[/url] or [url=https://github.com/hubertdungen/SpaceBourne2-Realism/releases/latest]GitHub[/url]. Tick Bigger Armies and any other mods of the set: it installs UE4SS if you don't have it, switches the mods on and keeps them updated.
 
-[b]Option B, manual:[/b]
-
+[b]B. Manual[/b] (Nexus file, or the zip on the [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/releases]releases page[/url])
 [list=1]
-[*]Install [url=https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/v3.0.1]UE4SS 3.0.1[/url] into SpaceBourne 2\SB2\Binaries\Win64\.
-[*]Download BiggerArmies-0.1.1.zip from the [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/releases]releases[/url] and extract it into the game folder (...\steamapps\common\SpaceBourne 2\). It adds SB2\Binaries\Win64\Mods\BiggerArmies\; the enabled.txt inside turns it on.
+[*]Extract the zip into your game folder (...\SpaceBourne 2, the one with SpaceBourne2.exe). It creates SB2\Binaries\Win64\Mods\BiggerArmies and switches itself on.
+[*]No UE4SS yet? Get [url=https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/v3.0.1]RE-UE4SS 3.0.1[/url] and copy dwmapi.dll, UE4SS.dll and UE4SS-settings.ini into SpaceBourne 2\SB2\Binaries\Win64\.
 [/list]
 
-Uninstall: delete SB2\Binaries\Win64\Mods\BiggerArmies. The slots already added stay in your save and keep working; the game just stops getting new ones from the mod.
+[b]Uninstall:[/b] untick Bigger Armies in the installer or delete the BiggerArmies folder. The slots already added stay in your save and keep working; the game just stops getting new ones from the mod.
 
 [line]
 [size=5][b]Settings[/b][/size]
@@ -60,29 +72,30 @@ Edit Mods\BiggerArmies\scripts\config.lua, then restart the game. Every line is 
 [line]
 [size=5][b]How it works[/b][/size]
 
-The game keeps your general slots in your faction's data and adds one with its own function when you upgrade your station. A few seconds after a load, the mod counts your slots, works out how many the game itself gave you, and calls that same function until you have the extra ones. It never removes anything. Details: [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/blob/mainDESIGN.md]DESIGN.md[/url].
+The game keeps your general slots in your faction's data and adds one with its own function when you upgrade your station. A few seconds after a load, the mod counts your slots, works out how many the game itself gave you, and calls that same function until you have the extra ones. It never removes anything. Details: [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/blob/main/DESIGN.md]DESIGN.md[/url]. Version history: [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/blob/main/CHANGELOG.md]CHANGELOG.md[/url].
 
 [line]
-[size=5][b]Part of the SpaceBourne 2 realism set[/b][/size]
+[size=5][b]The SpaceBourne 2 realism set[/b][/size]
 
-Part of the realism set, built around [url=https://www.nexusmods.com/spacebourne2/mods/4]Hardcore Tactical Realism[/url] as the core mod. HTR is not required: this mod works on its own or with any of the others. To install them all at once, use the installer: [url=https://github.com/hubertdungen/SpaceBourne2-Realism]SpaceBourne 2 Realism[/url] ([url=https://www.nexusmods.com/spacebourne2/mods/11]Nexus[/url]).
+Separate mods that work alone or in any combination. The [url=https://github.com/hubertdungen/SpaceBourne2-Realism]SpaceBourne 2 Realism installer[/url] ([url=https://www.nexusmods.com/spacebourne2/mods/11]Nexus[/url]) installs the ones you tick and keeps them updated.
 
 [list]
-[*][b]Hardcore Tactical Realism (HTR) — realistic ballistics and tactical AI[/b]: released: [url=https://github.com/hubertdungen/SpaceBourne2-HardcoreTacticalRealism]GitHub[/url] · [url=https://www.nexusmods.com/spacebourne2/mods/4]Nexus Mods[/url] · [url=https://steamcommunity.com/app/1646850/discussions/0/573805072991123580]Steam discussion[/url]
-[*][b]Split Controls — separate invert for ship and on foot[/b]: released: [url=https://github.com/hubertdungen/SpaceBourne2-SplitControls]GitHub[/url] · [url=https://www.nexusmods.com/spacebourne2/mods/5]Nexus Mods[/url]
-[*][b]Silent Ops — realistic stealth[/b]: released: [url=https://github.com/hubertdungen/SpaceBourne2-SilentOps]GitHub[/url] · [url=https://www.nexusmods.com/spacebourne2/mods/6]Nexus Mods[/url]
-[*][b]Gear Without Levels — use gear regardless of level[/b]: released: [url=https://github.com/hubertdungen/SpaceBourne2-GearWithoutLevels]GitHub[/url] · [url=https://www.nexusmods.com/spacebourne2/mods/7]Nexus Mods[/url]
-[*][b]SB2 HOTAS — HOTAS, triple screens, head tracking[/b]: released: [url=https://github.com/hubertdungen/SpaceBourne2-HOTAS]GitHub[/url] · [url=https://www.nexusmods.com/spacebourne2/mods/8]Nexus Mods[/url]
-[*][b]Faction Power — your deeds earn your faction power[/b]: released: [url=https://github.com/hubertdungen/SpaceBourne2-FactionPower]GitHub[/url] · [url=https://www.nexusmods.com/spacebourne2/mods/9]Nexus Mods[/url]
-[*][b]Tactical Engineering — realistic deployable turrets[/b]: released: [url=https://github.com/hubertdungen/SpaceBourne2-TacticalEngineering]GitHub[/url] · [url=https://www.nexusmods.com/spacebourne2/mods/10]Nexus Mods[/url]
-[*][b]Ammo Discipline — realistic ammo limits and scavenging[/b]: released: [url=https://github.com/hubertdungen/SpaceBourne2-AmmoDiscipline]GitHub[/url] · [url=https://www.nexusmods.com/spacebourne2/mods/12]Nexus Mods[/url]
-[*][b]Ground Waypoints — planet markers on foot and on the hoverbike[/b]: released: [url=https://github.com/hubertdungen/SpaceBourne2-GroundWaypoints]GitHub[/url] · [url=https://www.nexusmods.com/spacebourne2/mods/13]Nexus Mods[/url]
-[*][b]Get Out of the Way — NPCs step aside naturally[/b]: released: [url=https://github.com/hubertdungen/SpaceBourne2-GetOutOfTheWay]GitHub[/url] · [url=https://www.nexusmods.com/spacebourne2/mods/14]Nexus Mods[/url]
-[*][b]Tactical First Person — first-person on foot[/b]: released: [url=https://github.com/hubertdungen/SpaceBourne2-TacticalFirstPerson]GitHub[/url] · [url=https://www.nexusmods.com/spacebourne2/mods/15]Nexus Mods[/url]
-[*][b]Bigger Armies — more ground forces for your faction (this mod)[/b]: released: [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies]GitHub[/url] · [url=https://www.nexusmods.com/spacebourne2/mods/17]Nexus Mods[/url]
+[*][b][url=https://github.com/hubertdungen/SpaceBourne2-HardcoreTacticalRealism]Hardcore Tactical Realism[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/4]Nexus[/url]): realistic ballistics, wounds and tactical AI. The core of the set.
+[*][b][url=https://github.com/hubertdungen/SpaceBourne2-SilentOps]Silent Ops[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/6]Nexus[/url]): stealth, silent takedowns and suppressors.
+[*][b][url=https://github.com/hubertdungen/SpaceBourne2-AmmoDiscipline]Ammo Discipline[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/12]Nexus[/url]): carried ammo limits and scavenging, so every magazine counts.
+[*][b][url=https://github.com/hubertdungen/SpaceBourne2-GearWithoutLevels]Gear Without Levels[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/7]Nexus[/url]): use gear above your level, with small handling penalties.
+[*][b][url=https://github.com/hubertdungen/SpaceBourne2-TacticalFirstPerson]Tactical First Person[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/15]Nexus[/url]): first person on foot, weapons held up, aiming down the sights.
+[*][b][url=https://github.com/hubertdungen/SpaceBourne2-TacticalEngineering]Tactical Engineering[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/10]Nexus[/url]): realistic deployable turrets.
+[*][b][url=https://github.com/hubertdungen/SpaceBourne2-GetOutOfTheWay]Get Out of the Way[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/14]Nexus[/url]): NPCs step aside naturally when you walk through them.
+[*][b][url=https://github.com/hubertdungen/SpaceBourne2-GroundWaypoints]Ground Waypoints[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/13]Nexus[/url]): planet waypoints on foot and on the hoverbike.
+[*][b][url=https://github.com/hubertdungen/SpaceBourne2-FactionPower]Faction Power[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/9]Nexus[/url]): dungeons, strategic sales and missions earn your faction power.
+[*][b][url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies]Bigger Armies[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/17]Nexus[/url]): twice the general slots for your faction's ground and space forces.
+[*][b][url=https://github.com/hubertdungen/SpaceBourne2-ClearHUD]Clear HUD[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/16]Nexus[/url]): a reticle you can see and HUD colours of your choice.
+[*][b][url=https://github.com/hubertdungen/SpaceBourne2-SplitControls]Split Controls[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/5]Nexus[/url]): separate vertical invert for ship and on foot, per device.
+[*][b][url=https://github.com/hubertdungen/SpaceBourne2-HOTAS]SB2 HOTAS[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/8]Nexus[/url]): HOTAS, rudder pedals, triple screens and head tracking.
 [/list]
 
 [line]
 [size=5][b]License[/b][/size]
 
-MIT. See [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/blob/mainLICENSE]LICENSE[/url].
+MIT. See [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/blob/main/LICENSE]LICENSE[/url].
