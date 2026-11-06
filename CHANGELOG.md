@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.1 — 2026-11-06
+
+- **Fix: a possible crash while a level loads.** The mod noticed the player controller through a
+  UE4SS feature that runs on the game's loading thread, and that could crash the game
+  ("Fatal Error!") during a level load. It now notices it when you take control of your character,
+  on the game's own thread.
+- Tested in game with the whole realism set: no crash, general slots raised as before (10 -> 20).
+
 ## 0.1.0 — 2026-11-01
 
 First release.

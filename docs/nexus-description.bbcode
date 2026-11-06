@@ -2,7 +2,7 @@
 
 In SpaceBourne 2 your faction's forces are its generals, and each general leads 4 soldiers. A new faction gets 10 general slots, 5 for Ground Forces and 5 for Space Forces: 10 squads, 50 men. "Fifty men isn't exactly an army to conquer the galaxy." Bigger Armies gives your faction more general slots, so you can field twice as many men.
 
-Version 0.1.0 · [url=https://www.nexusmods.com/spacebourne2/mods/17]Nexus Mods page[/url] · UE4SS Lua mod · works alone or with the rest of the [url=#part-of-the-spacebourne-2-realism-set]realism set[/url].
+Version 0.1.1 · [url=https://www.nexusmods.com/spacebourne2/mods/17]Nexus Mods page[/url] · UE4SS Lua mod · works alone or with the rest of the [url=#part-of-the-spacebourne-2-realism-set]realism set[/url].
 
 [line]
 [size=5][b]What it does[/b][/size]
@@ -33,7 +33,7 @@ Version 0.1.0 · [url=https://www.nexusmods.com/spacebourne2/mods/17]Nexus Mods 
 
 [list=1]
 [*]Install [url=https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/v3.0.1]UE4SS 3.0.1[/url] into SpaceBourne 2\SB2\Binaries\Win64\.
-[*]Download BiggerArmies-0.1.0.zip from the [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/releases]releases[/url] and extract it into the game folder (...\steamapps\common\SpaceBourne 2\). It adds SB2\Binaries\Win64\Mods\BiggerArmies\; the enabled.txt inside turns it on.
+[*]Download BiggerArmies-0.1.1.zip from the [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/releases]releases[/url] and extract it into the game folder (...\steamapps\common\SpaceBourne 2\). It adds SB2\Binaries\Win64\Mods\BiggerArmies\; the enabled.txt inside turns it on.
 [/list]
 
 Uninstall: delete SB2\Binaries\Win64\Mods\BiggerArmies. The slots already added stay in your save and keep working; the game just stops getting new ones from the mod.
@@ -60,7 +60,7 @@ Edit Mods\BiggerArmies\scripts\config.lua, then restart the game. Every line is 
 [line]
 [size=5][b]How it works[/b][/size]
 
-The game keeps your general slots in your faction's data and adds one with its own function when you upgrade your station. A few seconds after a load, the mod counts your slots, works out how many the game itself gave you, and calls that same function until you have the extra ones. It never removes anything. Details: [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/blob/main/DESIGN.md]DESIGN.md[/url].
+The game keeps your general slots in your faction's data and adds one with its own function when you upgrade your station. A few seconds after a load, the mod counts your slots, works out how many the game itself gave you, and calls that same function until you have the extra ones. It never removes anything. Details: [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/blob/mainDESIGN.md]DESIGN.md[/url].
 
 [line]
 [size=5][b]Part of the SpaceBourne 2 realism set[/b][/size]
@@ -85,4 +85,4 @@ Part of the realism set, built around [url=https://www.nexusmods.com/spacebourne
 [line]
 [size=5][b]License[/b][/size]
 
-MIT. See [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/blob/main/LICENSE]LICENSE[/url].
+MIT. See [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/blob/mainLICENSE]LICENSE[/url].

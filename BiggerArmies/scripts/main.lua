@@ -12,12 +12,11 @@
   ADDS empty slots up to a target; it never removes a slot or touches a general or soldier.
   Without the mod the game keeps the slots you have and works with them.
 
-  Cost: no per-frame work and no object scans. A new player controller (one per load) is noted
-  by NotifyOnNewObject; from it the loop reads the Game_Builder and two array lengths, every
+  Cost: no per-frame work and no object scans. The player controller is noted when it takes a pawn (ClientRestart, on the game thread); from it the loop reads the Game_Builder and two array lengths, every
   10 s until the faction data is there, then every 30 s.
 ]]
 
-local VERSION = "0.1.0"
+local VERSION = "0.1.1"
 
 -- Game names (the only things to fix after a game patch) -------------------------------------
 local G = {
@@ -127,14 +126,21 @@ local function check()
     return 30
 end
 
-NotifyOnNewObject(G.PlayerController, function(pc)
+-- The player controller, on the game thread: ClientRestart runs each time it takes a pawn (after every
+-- load). 0.1.0 used NotifyOnNewObject, whose callback UE4SS runs on whatever thread creates the object
+-- (the loading thread during a level load), which could crash inside UE4SS (2026-11-06).
+local okH, errH = pcall(RegisterHook, "/Script/Engine.PlayerController:ClientRestart", function(self)
     pcall(function()
-        local full = pc:GetFullName()
-        pcPath = full:match("^%S+%s+(.+)$") or full
-        nextCheck = os.clock() + 15 -- let the save finish loading
-        log("player controller " .. pcPath)
+        local full = self:get():GetFullName()
+        local path = full:match("^%S+%s+(.+)$") or full
+        if path ~= pcPath then
+            pcPath = path
+            nextCheck = os.clock() + 15 -- let the save finish loading
+            log("player controller " .. pcPath)
+        end
     end)
 end)
+if not okH then warn("could not watch the player controller: " .. tostring(errH)) end
 
 LoopAsync(2000, function()
     if os.clock() < nextCheck then return false end

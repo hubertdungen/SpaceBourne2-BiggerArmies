@@ -7,7 +7,7 @@ faction gets 10 general slots, 5 for Ground Forces and 5 for Space Forces: 10 sq
 "Fifty men isn't exactly an army to conquer the galaxy." Bigger Armies gives your faction more
 general slots, so you can field twice as many men.
 
-Version 0.1.0 · [Nexus Mods page](https://www.nexusmods.com/spacebourne2/mods/17) · UE4SS Lua mod · works alone or with the rest of the
+Version 0.1.1 · [Nexus Mods page](https://www.nexusmods.com/spacebourne2/mods/17) · UE4SS Lua mod · works alone or with the rest of the
 [realism set](#part-of-the-spacebourne-2-realism-set).
 
 ## What it does
@@ -39,7 +39,7 @@ installer installs UE4SS and any mods of the set you pick.
 
 1. Install [UE4SS 3.0.1](https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/v3.0.1) into
    `SpaceBourne 2\SB2\Binaries\Win64\`.
-2. Download `BiggerArmies-0.1.0.zip` from the
+2. Download `BiggerArmies-0.1.1.zip` from the
    [releases](https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/releases) and extract it into
    the game folder (`...\steamapps\common\SpaceBourne 2\`). It adds
    `SB2\Binaries\Win64\Mods\BiggerArmies\`; the `enabled.txt` inside turns it on.
@@ -78,6 +78,8 @@ Tested in game on 2026-11-01 on a copy of a real save with a faction (6 generals
 with HTR and eight other set mods installed: slots 10 → 20 a few seconds after the load, generals and
 soldiers untouched, a second check adds nothing, saves untouched. Not yet tested: reloading a save
 without the mod, and a big ground battle. Details: [DESIGN.md](DESIGN.md), section 7.
+0.1.1 (the player controller from PlayerController:ClientRestart on the game thread instead of
+NotifyOnNewObject) was smoke-tested on 2026-11-06 with the whole set: no crash, slots 10 -> 20.
 <!-- /nexus:skip -->
 
 ## Part of the SpaceBourne 2 realism set
