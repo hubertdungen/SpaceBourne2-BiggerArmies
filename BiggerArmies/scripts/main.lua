@@ -16,7 +16,7 @@
   10 s until the faction data is there, then every 30 s.
 ]]
 
-local VERSION = "0.1.1"
+local VERSION = "0.1.2"
 
 -- Game names (the only things to fix after a game patch) -------------------------------------
 local G = {
@@ -142,14 +142,20 @@ local okH, errH = pcall(RegisterHook, "/Script/Engine.PlayerController:ClientRes
 end)
 if not okH then warn("could not watch the player controller: " .. tostring(errH)) end
 
-LoopAsync(2000, function()
-    if os.clock() < nextCheck then return false end
-    nextCheck = os.clock() + 10
-    ExecuteInGameThread(function()
-        local ok, r = pcall(check)
-        if ok then nextCheck = os.clock() + r else warn("check: " .. tostring(r)) end
-    end)
-    return false
+-- Every 2 s on the game thread: pumped by the ALS character tick on foot and the ship tick in a
+-- ship (gametick.lua, 0.1.2). Until 0.1.1 this was LoopAsync + ExecuteInGameThread: called from
+-- UE4SS's async thread, ExecuteInGameThread writes a map all mods share without a lock, and two
+-- mods doing it at once crashed the game (UE4SS.dll+0x87c104).
+local GT = require("gametick")
+GT.log = function(msg) warn(msg) end
+GT.drive(GT.FOOT_TICK, "foot")
+GT.drive(GT.SHIP_TICK, "ship")
+GT.boot()
+GT.every(2.0, function(now)
+    if now < nextCheck then return end
+    nextCheck = now + 10
+    local ok, r = pcall(check)
+    if ok then nextCheck = os.clock() + r else warn("check: " .. tostring(r)) end
 end)
 
 warn(string.format("Bigger Armies %s loaded: +%d general slots (up to %d)", VERSION, EXTRA, G.MaxSlots))
