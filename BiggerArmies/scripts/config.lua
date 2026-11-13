@@ -17,16 +17,5 @@ return {
     -- orders), so the mod never goes above 22 slots.
     ExtraGeneralSlots = 10,
 
-    -- Pod catchers for your allies. Rescue pods drift free after a ship is shot down; only YOU could
-    -- catch them (item or mothership perk). With this on, an allied ship (fleet or wingmen) that is
-    -- closer to a free pod than you are, and within Range of it, catches it with the game's own
-    -- catcher. The pilot lands in YOUR captives, as if you had caught it. Not done while your captive
-    -- slots are full or while your mothership perk "Mother Pod Catcher" is on (it takes every pod).
-    PodCatchers = {
-        Enabled = true,
-        Range = 5000,       -- metres from the allied ship to the pod (100 - 50000)
-        Interval = 2.5,     -- seconds between checks (1 or more)
-    },
-
     Debug = false,          -- true: writes details to biggerarmies.log in the mod folder
 }

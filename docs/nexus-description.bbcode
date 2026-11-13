@@ -1,8 +1,10 @@
-[size=6][b]Bigger Armies — more men for your faction, and your allies catch rescue pods, in SpaceBourne 2[/b][/size]
+[size=6][b]Bigger Armies — more ground forces for your faction in SpaceBourne 2[/b][/size]
 
-In SpaceBourne 2 your faction's forces are its generals, and each general leads 4 soldiers. A new faction gets 10 general slots, 5 for Ground Forces and 5 for Space Forces: 10 squads, 50 men. "Fifty men isn't exactly an army to conquer the galaxy." Bigger Armies gives your faction more general slots, so you can field twice as many men. And your allied ships now catch the rescue pods that drift free after a fight, so you are not the only one who can.
+In SpaceBourne 2 your faction's forces are its generals, and each general leads 4 soldiers. A new faction gets 10 general slots, 5 for Ground Forces and 5 for Space Forces: 10 squads, 50 men. "Fifty men isn't exactly an army to conquer the galaxy." Bigger Armies gives your faction more general slots, so you can field twice as many men.
 
 [b]Links:[/b] [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies]GitHub[/url] · [url=https://www.nexusmods.com/spacebourne2/mods/17]Nexus Mods[/url] · UE4SS Lua mod · works alone or with the rest of the realism set.
+
+Ally pod catchers (rescue pods caught by your allied ships) are not part of this mod: they live in > [url=https://github.com/hubertdungen/SpaceBourne2-HardcoreSpaceRealism]Hardcore Space Realism[/url].
 [b]Install the whole realism set in one go:[/b] the [url=https://github.com/hubertdungen/SpaceBourne2-Realism]SpaceBourne 2 Realism installer[/url] ([url=https://www.nexusmods.com/spacebourne2/mods/11]Nexus[/url]).
 
 [line]
@@ -23,18 +25,10 @@ In SpaceBourne 2 your faction's forces are its generals, and each general leads 
 [*][b]Your faction first.[/b] Nothing happens until you have founded your faction; the slots appear a few seconds after that, or after loading a save.
 [/list]
 
-[size=4][b]Ally pod catchers[/b][/size]
-
-[list]
-[*][b]Your allies catch pods too.[/b] In the game only you can catch a rescue pod (the pod catcher item or the mothership perk), so pods drift away or time out when you are busy. Now an allied ship (fleet or wingmen) that is closer to a free pod than you are, and within range of it, catches it with the game's own catcher: the pod flies to the ally and the pilot lands in [b]your[/b] captives, as if you had caught it.
-[*][b]Your slots are respected.[/b] Nothing is caught while your captive slots are full, and never more than there are free slots. The mothership perk "Mother Pod Catcher" keeps working as before; while it is on, the mod leaves the pods to it. Pods near you stay yours to catch.
-[*][b]Cheap.[/b] One short check every 2.5 seconds on the game's own thread; the allied ships are only looked up while a free pod exists.
-[/list]
-
 [size=4][b]On by default[/b][/size]
 
 [list]
-[*]No key needed: it works as soon as it is installed. Both parts (bigger army, ally pod catchers) have their own switch.
+[*]No key needed: it works as soon as it is installed.
 [/list]
 
 [line]
@@ -66,9 +60,6 @@ Edit Mods\BiggerArmies\scripts\config.lua, then restart the game. Every line is 
 [list]
 [*]Enabled: false switches the mod off.
 [*]ExtraGeneralSlots (10): general slots added on top of the game's own, 0–12. They come in pairs, one Ground Forces and one Space Forces general (the game adds them that way), so an odd number is rounded down. Each slot is room for 5 men.
-[*]PodCatchers.Enabled (true): false turns the ally pod catchers off.
-[*]PodCatchers.Range (5000): how far from an allied ship a pod may be and still be caught, in metres (100–50000). The game removes pods that are more than 12.5 km from you.
-[*]PodCatchers.Interval (2.5): seconds between checks (1 or more).
 [/list]
 
 [line]
@@ -77,15 +68,13 @@ Edit Mods\BiggerArmies\scripts\config.lua, then restart the game. Every line is 
 [list]
 [*][b]4 soldiers per general[/b] stays as in the game: the faction screen has exactly 4 soldier places per general, and the mod cannot change that screen.
 [*][b]Lowering the setting[/b] does not remove slots you already have; the mod only adds.
-[*][b]Pod catches go to you.[/b] The pilot lands in your captives; there is no separate account for your faction or your allies. A catch also counts for the game's pod catcher mission if it is running.
-[*][b]Pods only.[/b] Allies catch free rescue pods; they do not pick up anything else.
 [*][b]Battles with many squads[/b] put more soldiers on the field, which costs frames on slower PCs. That is the game's own cost; send fewer squads if a big battle runs slowly.
 [/list]
 
 [line]
 [size=5][b]How it works[/b][/size]
 
-The game keeps your general slots in your faction's data and adds one with its own function when you upgrade your station. A few seconds after a load, the mod counts your slots, works out how many the game itself gave you, and calls that same function until you have the extra ones. It never removes anything. The pod catchers look for free pods (the game tags them "FreePod") every few seconds; when an ally is nearest, the mod calls the pod's own CatchByMother with that ally ship, the same call the mothership perk makes. Details: [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/blob/main/DESIGN.md]DESIGN.md[/url]. Version history: [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/blob/main/CHANGELOG.md]CHANGELOG.md[/url].
+The game keeps your general slots in your faction's data and adds one with its own function when you upgrade your station. A few seconds after a load, the mod counts your slots, works out how many the game itself gave you, and calls that same function until you have the extra ones. It never removes anything. Details: [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/blob/main/DESIGN.md]DESIGN.md[/url]. Version history: [url=https://github.com/hubertdungen/SpaceBourne2-BiggerArmies/blob/main/CHANGELOG.md]CHANGELOG.md[/url].
 
 [line]
 [size=5][b]The SpaceBourne 2 realism set[/b][/size]
@@ -94,6 +83,7 @@ Separate mods that work alone or in any combination. The [url=https://github.com
 
 [list]
 [*][b][url=https://github.com/hubertdungen/SpaceBourne2-HardcoreTacticalRealism]Hardcore Tactical Realism[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/4]Nexus[/url]): realistic ballistics, wounds and tactical AI. The core of the set.
+[*][b][url=https://github.com/hubertdungen/SpaceBourne2-HardcoreSpaceRealism]Hardcore Space Realism[/url][/b] (Nexus page coming): realism for ships and space combat, with the ally pod catchers.
 [*][b][url=https://github.com/hubertdungen/SpaceBourne2-SilentOps]Silent Ops[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/6]Nexus[/url]): stealth, silent takedowns and suppressors.
 [*][b][url=https://github.com/hubertdungen/SpaceBourne2-AmmoDiscipline]Ammo Discipline[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/12]Nexus[/url]): carried ammo limits and scavenging, so every magazine counts.
 [*][b][url=https://github.com/hubertdungen/SpaceBourne2-GearWithoutLevels]Gear Without Levels[/url][/b] ([url=https://www.nexusmods.com/spacebourne2/mods/7]Nexus[/url]): use gear above your level, with small handling penalties.
