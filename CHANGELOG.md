@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0 — 2026-11-13
+
+- **New: your allies catch rescue pods.** An allied ship that is closer to a free pod than you are,
+  and within `PodCatchers.Range` (5 km by default), catches it with the game's own catcher; the
+  pilot goes to your captives. Not while your captive slots are full or while your mothership perk
+  is on. `PodCatchers.Enabled = false` turns it off.
+- Tested in game: catches in range, nothing when you are nearer, out of range, slots full, perk on
+  or an enemy ship; two allies near one pod catch it once.
+
 ## 0.1.2 — 2026-11-06
 
 - **Fix: a "Fatal Error!" crash that could come at any moment.** The mod's check ran on a UE4SS

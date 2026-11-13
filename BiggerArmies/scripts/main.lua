@@ -16,7 +16,7 @@
   10 s until the faction data is there, then every 30 s.
 ]]
 
-local VERSION = "0.1.2"
+local VERSION = "0.2.0"
 
 -- Game names (the only things to fix after a game patch) -------------------------------------
 local G = {
@@ -67,10 +67,18 @@ verbose = cfg.Debug == true
 -- Slots come in pairs (one ground, one space general): an odd number is rounded down.
 local EXTRA = math.max(0, math.min(12, math.floor(cfg.ExtraGeneralSlots / 2) * 2))
 
-if not cfg.Enabled or EXTRA == 0 then
+-- Pod catchers for allies (podcatch.lua): their own switch, range in metres and check interval.
+local podCfg = type(cfg.PodCatchers) == "table" and cfg.PodCatchers or {}
+if podCfg.Enabled == nil then podCfg.Enabled = true end
+if type(podCfg.Range) ~= "number" then podCfg.Range = 5000 end
+podCfg.Range = math.max(100, math.min(50000, podCfg.Range))
+if type(podCfg.Interval) ~= "number" then podCfg.Interval = 2.5 end
+
+if not cfg.Enabled then
     warn("Bigger Armies " .. VERSION .. " loaded, switched off in config.lua")
     return
 end
+local SLOTS = EXTRA > 0 -- general slots; the pod catchers below work on their own
 
 -- Helpers ----------------------------------------------------------------------------------
 local function valid(o)
@@ -152,10 +160,16 @@ GT.drive(GT.HUD_TICK, "hud")
 GT.drive(GT.FOOT_TICK, "foot")
 GT.boot()
 GT.every(2.0, function(now)
-    if now < nextCheck then return end
+    if not SLOTS or now < nextCheck then return end
     nextCheck = now + 10
     local ok, r = pcall(check)
     if ok then nextCheck = os.clock() + r else warn("check: " .. tostring(r)) end
 end)
 
-warn(string.format("Bigger Armies %s loaded: +%d general slots (up to %d)", VERSION, EXTRA, G.MaxSlots))
+do
+    local okP, P = pcall(require, "podcatch")
+    if okP then pcall(P.start, GT, podCfg, log, warn) else warn("podcatch.lua: " .. tostring(P)) end
+end
+
+warn(string.format("Bigger Armies %s loaded: +%d general slots (up to %d), ally pod catchers %s", VERSION, EXTRA,
+    G.MaxSlots, podCfg.Enabled and "on" or "off"))
