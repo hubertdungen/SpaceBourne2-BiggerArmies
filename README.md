@@ -12,7 +12,7 @@ general slots, so you can field twice as many men.
 the rest of the realism set.
 
 > Ally pod catchers (rescue pods caught by your allied ships) are not part of this mod: they live in
-> [Hardcore Space Realism](https://github.com/hubertdungen/SpaceBourne2-HardcoreSpaceRealism).
+> [Hardcore Space Realism](https://www.nexusmods.com/spacebourne2/mods/20) ([GitHub](https://github.com/hubertdungen/SpaceBourne2-HardcoreSpaceRealism)).
 **Install the whole realism set in one go:** the
 [SpaceBourne 2 Realism installer](https://github.com/hubertdungen/SpaceBourne2-Realism)
 ([Nexus](https://www.nexusmods.com/spacebourne2/mods/11)).
@@ -96,7 +96,7 @@ Separate mods that work alone or in any combination. The
 - **[Hardcore Tactical Realism](https://github.com/hubertdungen/SpaceBourne2-HardcoreTacticalRealism)**
   ([Nexus](https://www.nexusmods.com/spacebourne2/mods/4)): realistic ballistics, wounds and tactical AI. The core of the set.
 - **[Hardcore Space Realism](https://github.com/hubertdungen/SpaceBourne2-HardcoreSpaceRealism)**
-  (Nexus page coming): realism for ships and space combat, with the ally pod catchers.
+  ([Nexus](https://www.nexusmods.com/spacebourne2/mods/20)): realism for ships and space combat, with the ally pod catchers.
 - **[Silent Ops](https://github.com/hubertdungen/SpaceBourne2-SilentOps)**
   ([Nexus](https://www.nexusmods.com/spacebourne2/mods/6)): stealth, silent takedowns and suppressors.
 - **[Ammo Discipline](https://github.com/hubertdungen/SpaceBourne2-AmmoDiscipline)**

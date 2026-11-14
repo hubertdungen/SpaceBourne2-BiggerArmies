@@ -2,9 +2,10 @@
 
 ## 0.2.1 — 2026-11-13
 
-- The ally pod catchers (tried in an unreleased 0.2.0) are **not** part of Bigger Armies: they belong to the new
-  [Hardcore Space Realism](https://github.com/hubertdungen/SpaceBourne2-HardcoreSpaceRealism), which comes out
-  the same day. This version is 0.1.2 with the version number moved on, so the two never clash.
+- The ally pod catchers (added in 0.2.0, a GitHub-only release of 2026-11-13) are **not** part of Bigger Armies: they moved to the new
+  [Hardcore Space Realism](https://www.nexusmods.com/spacebourne2/mods/20). This version is 0.1.2 with the version number moved on.
+  If you installed 0.2.0, update to this one and get Hardcore Space Realism: with both installed there are no double catches
+  (Hardcore Space Realism leaves the pods to Bigger Armies 0.2.0 while that is on).
 - README: the realism set list now includes Hardcore Space Realism, Squad Tactics and Unofficial Patch.
 
 ## 0.1.2 — 2026-11-06
